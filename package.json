@@ -1,15 +1,21 @@
 {
-  "name": "bexlite-PerkakasKu",
+  "name": "bexlite-perkakasku",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw:run": "bunx tailwindcss -i src/views/index.css -o public/globals.css --watch",
+    "start": "concurrently \"bun dev\" \"bun tw:run\"",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
+    "@elysiajs/html": "^1.0.2",
+    "@elysiajs/static": "^1.0.3",
+    "@paralleldrive/cuid2": "^2.2.2",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "concurrently": "^8.2.2",
+    "tailwindcss": "^3.4.4"
   },
   "module": "src/index.js"
 }
